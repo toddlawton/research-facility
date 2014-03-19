@@ -1359,9 +1359,9 @@ blockquote {
 /**
  * Pull classes, to move grid items back to the left by certain amounts.
  */
-html, body {
-  margin: 24px auto;
-  padding: 0 24px; }
+body {
+  margin: 48px auto 96px;
+  padding: 0 48px; }
 
 .page-title-container {
   text-align: center;
