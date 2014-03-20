@@ -1,3 +1,13 @@
+.full-bleed-header {
+	position: absolute;
+	background: $dark-grey;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: $vertical-rhythm * 6;
+	pointer-events: none;
+}
+
 .page-title-container {
 	text-align: center;
 	margin-top: $vertical-rhythm * 2;
