@@ -2,6 +2,7 @@
 /* Global */
 /* Colors */
 /* Layout */
+/* Objects */
 /* Root */
 html, body {
   font: 100%/1.5 "Open Sans", sans-serif;
@@ -115,6 +116,20 @@ blockquote {
     /* 24px / 16px = */
     line-height: 1.45833333;
     /* 35px / 24px */ } }
+/* Vertical Alignment Helpers */
+.valign-parent {
+  white-space: nowrap; }
+
+.valign {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal; }
+
+.valign-helper {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%; }
+
 /*------------------------------------*\
     $CSSWIZARDRY-GRIDS
 \*------------------------------------*/
@@ -1361,9 +1376,45 @@ blockquote {
  */
 body {
   margin: 48px auto 96px;
-  padding: 0 48px; }
+  padding: 0 48px;
+  background: white; }
+
+#page-root {
+  padding: 48px 0; }
+
+.full-bleed-hero {
+  position: absolute;
+  background: #222222;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 500px;
+  pointer-events: none; }
+  .full-bleed-hero + #page-root {
+    margin-top: 500px; }
+
+.full-bleed-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-image: url("../img/hero-images/surface.jpg"); }
+
+.hero {
+  height: 500px;
+  text-align: center; }
 
 .page-title-container {
   text-align: center;
   margin-top: 20px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto; }
+  .page-title-container.inverted {
+    color: #fff; }

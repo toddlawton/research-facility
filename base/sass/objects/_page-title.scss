@@ -1,15 +1,43 @@
-.full-bleed-header {
+.full-bleed-hero {
 	position: absolute;
 	background: $dark-grey;
 	top: 0;
 	left: 0;
 	right: 0;
-	height: $vertical-rhythm * 6;
+	height: $hero-height;
 	pointer-events: none;
+	+#page-root {
+		margin-top: $hero-height;
+	}
+}
+
+.full-bleed-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-image: url('../img/hero-images/surface.jpg');
+}
+
+.hero {
+	height: $hero-height;
+	text-align: center;
 }
 
 .page-title-container {
 	text-align: center;
 	margin-top: $vertical-rhythm * 2;
 	margin-bottom: $vertical-rhythm * 2;
+	margin-left: auto;
+	margin-right: auto;
+
+	&.inverted {
+		color: #fff;
+	}
 }
