@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app class="no-js">
+<html ng-app="Twitter" class="no-js">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,6 +55,13 @@
         					<button ng-click="clearChecked()">Test Filter</button>
         				</form>
         			</div>
+        			<div ng-controller="TwitterController">
+        				<table>
+        					<tr ng-repeat="tweet in twitterResult.results">
+        						<td>{{tweet.text}}</td>
+        					</tr>
+        				</table>
+        			</div>
         		</div>
         	</div>
         </div>
@@ -62,6 +69,8 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0rc3/angular.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0rc3/angular-resource.js"></script>
+        <script src="js/twitter.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
         <script src="js/experimentsController.js"></script>
         <script src="js/plugins.js"></script>
