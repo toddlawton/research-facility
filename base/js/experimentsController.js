@@ -10,6 +10,12 @@ function ExperimentsController($scope) {
 		$scope.totalExperiments = $scope.experiments.length;
 	};
 
+	$scope.clearChecked = function () {
+		$scope.experiments = _.filter($scope.experiments, function(experiment){
+			return experiment.awesome;
+		});
+	};
+
 	$scope.updateExperimentTotal();
 
 	$scope.addNewExperiment = function () {
