@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html ng-app class="no-js">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Research Facility</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -40,14 +40,31 @@
         			<p>Great turbulent clouds. Prime number, tesseract the only home we've ever known brain is the seed of intelligence globular star cluster network of wormholes stirred by starlight! Tendrils of gossamer clouds paroxysm of global death dispassionate extraterrestrial observer. How far away, the ash of stellar alchemy venture take root and flourish at the edge of forever muse about extraplanetary. Something incredible is waiting to be known culture muse about! Two ghostly white figures in coveralls and helmets are soflty dancing great turbulent clouds descended from astronomers with pretty stories for which there's little good evidence dream of the mind's eye? Hypatia. Sea of Tranquility, dream of the mind's eye. Dispassionate extraterrestrial observer? Corpus callosum!</p>
         			<blockquote>From which we spring as a patch of light extraordinary claims require extraordinary evidence</blockquote>
         			<p>Extraplanetary another world dream of the mind's eye. Stirred by starlight birth intelligent beings realm of the galaxies quasar consciousness culture Jean-François Champollion kindling the energy hidden in matter. From which we spring as a patch of light extraordinary claims require extraordinary evidence rings of Uranus globular star cluster? Another world, Rig Veda two ghostly white figures in coveralls and helmets are soflty dancing, emerged into consciousness cosmic fugue. Tesseract!</p>
+        			<div ng-controller="ExperimentsController">
+        				<h2>Experiments: {{totalExperiments}}</h2>
+        				<ul>
+        					<li ng-repeat="experiment in experiments" ng-model="awesome">
+        						<input type="checkbox" ng-model="experiment.awesome">
+	        					<a class="awesome-{{experiment.awesome}}" href="{{experiment.url}}">{{experiment.name}}</a>
+        					</li>
+        				</ul>
+        				<form>
+        					<input type="text" ng-model="newExperimentName" ng-model-instant>
+        					<input type="text" ng-model="newExperimentUrl" ng-model-instant>
+        					<button ng-click="addNewExperiment()">Add Experiment Link</button>
+        				</form>
+        			</div>
         		</div>
         	</div>
         </div>
         
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0rc3/angular.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+        <script src="js/experimentsController.js"></script>
         <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/app.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
