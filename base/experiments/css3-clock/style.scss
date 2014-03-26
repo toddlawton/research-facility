@@ -1,0 +1,61 @@
+$hours: 12;
+$minutes: 60;
+$seconds: 60;
+
+$clock-size: 200px;
+$dot-size: $clock-size / 20;
+$inner-padding: 20px;
+
+$base-color: #000;
+$dot-color: #fff;
+
+@mixin vendor-prefix($name, $argument) {
+	-webkit-#{$name}: #{$argument};
+	-ms-#{$name}: #{$argument};
+	-moz-#{$name}: #{$argument};
+	-o-#{$name}: #{$argument};
+	#{$name}: #{$argument};
+}
+
+.clock-container {
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.clock-base {
+	position: relative;
+	background: $base-color;
+	width: $clock-size;
+	height: $clock-size;
+	border-radius: $clock-size / 2;
+}
+.clock .hours {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -$dot-size/2;
+	margin-left: -$dot-size/2;
+	width: $dot-size;
+	height: $dot-size;
+	//@include vendor-prefix(transform, translate(- $clock-size/2, - $clock-size/2) );
+}
+.clock .hours li {
+	list-style-type: none;
+	position: absolute;
+	width: $dot-size;
+	height: $dot-size;
+	left: 0;
+	top: 0;
+	margin: 0;
+	&::after {
+		width: $dot-size;
+		height: $dot-size;
+		background: $dot-color;
+		margin-top: -($clock-size/2 - $dot-size);
+	}
+}
+
+@for $i from 0 to $hours {
+	$curRotation: $i*15;
+	.clock .hours li:nth-child(#{$i}) { @include vendor-prefix(transform, rotate($curRotation+deg)) }
+}

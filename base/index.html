@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="Twitter" class="no-js">
+<html ng-app="feedModule" class="no-js">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +10,7 @@
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="bower_components/sass-pure/pure.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/master.css">
         <script src="js/vendor/modernizr-2.7.1.min.js"></script>
@@ -40,6 +41,18 @@
         			<p>Great turbulent clouds. Prime number, tesseract the only home we've ever known brain is the seed of intelligence globular star cluster network of wormholes stirred by starlight! Tendrils of gossamer clouds paroxysm of global death dispassionate extraterrestrial observer. How far away, the ash of stellar alchemy venture take root and flourish at the edge of forever muse about extraplanetary. Something incredible is waiting to be known culture muse about! Two ghostly white figures in coveralls and helmets are soflty dancing great turbulent clouds descended from astronomers with pretty stories for which there's little good evidence dream of the mind's eye? Hypatia. Sea of Tranquility, dream of the mind's eye. Dispassionate extraterrestrial observer? Corpus callosum!</p>
         			<blockquote>From which we spring as a patch of light extraordinary claims require extraordinary evidence</blockquote>
         			<p>Extraplanetary another world dream of the mind's eye. Stirred by starlight birth intelligent beings realm of the galaxies quasar consciousness culture Jean-François Champollion kindling the energy hidden in matter. From which we spring as a patch of light extraordinary claims require extraordinary evidence rings of Uranus globular star cluster? Another world, Rig Veda two ghostly white figures in coveralls and helmets are soflty dancing, emerged into consciousness cosmic fugue. Tesseract!</p>
+
+        			
+
+        			<div ng-controller="FeedCtrl">
+	        			<div ng-repeat="feed in feeds | orderBy:'title'">
+						<h3>{{feed.title}}</h3>
+						<p><span ng-repeat="item in feed.entries">
+						<a href="{{item.link}}" target="_blank">{{item.title}}</a> (<span>{{item.publishedDate | date:'d-MM-yyyy HH:mm'}}</span>)<br /><br />
+						</span></p>
+	        			</div>
+        			</div>
+
         			<div ng-controller="ExperimentsController">
         				<h2>Experiments: {{totalExperiments}}</h2>
         				<ul>
@@ -49,19 +62,14 @@
         					</li>
         				</ul>
         				<form>
-        					<input type="text" ng-model="newExperimentName" ng-model-instant>
+        					<input type="text" placeholder="Experiment Name" ng-model="newExperimentName" ng-model-instant>
         					<input type="text" ng-model="newExperimentUrl" ng-model-instant>
-        					<button ng-click="addNewExperiment()">Add Experiment Link</button>
-        					<button ng-click="clearChecked()">Test Filter</button>
+        					<button class="pure-button" ng-click="addNewExperiment()">Add Experiment Link</button>
+        					<button class="pure-button" ng-click="clearChecked()">Test Filter</button>
         				</form>
         			</div>
-        			<div ng-controller="TwitterController">
-        				<table>
-        					<tr ng-repeat="tweet in twitterResult.results">
-        						<td>{{tweet.text}}</td>
-        					</tr>
-        				</table>
-        			</div>
+
+        			<!-- <div ng-include src="'experiments/css3-clock/experiment.html'"></div> -->
         		</div>
         	</div>
         </div>
@@ -70,7 +78,6 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0rc3/angular.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0rc3/angular-resource.js"></script>
-        <script src="js/twitter.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
         <script src="js/experimentsController.js"></script>
         <script src="js/plugins.js"></script>

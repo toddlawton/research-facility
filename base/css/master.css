@@ -18,6 +18,10 @@ p {
 p + p {
   margin-top: 1.5em; }
 
+/* Links */
+a {
+  color: #16a085; }
+
 /* Headings */
 body {
   font-size: 100%; }
