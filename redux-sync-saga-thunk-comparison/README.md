@@ -1,25 +1,5 @@
-# ReduxSimpleStarter
+# Comparison: redux redux-saga redux-thunk
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+In this project, a simple e-mail directory app is implemented using redux in 3 flavours, sagas, thunk, and plain synchronous actions. The following diagram should help visualize the flow of actions:
 
-### Getting Started
-
-There are two methods for getting started with this repo.
-
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
-
-```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
-> npm install
-> npm start
-```
-
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
-
-```
-> npm install
-> npm start
-```
+![redux redux-thunk redux-saga - page 1 1](https://cloud.githubusercontent.com/assets/5748440/26634296/2b0a8348-45e4-11e7-80fa-40543fdfc1b3.jpeg)
