@@ -9,7 +9,7 @@ In this project, a simple e-mail directory app is implemented using redux in 3 f
 - There is a strong separation of concerns in the action/side-effect/reducer relationship. The action creator and reducer for the saga are both pure, and the side effect logic is isolated.
 - Performs async side-effects in a synchronous style that is easy to read at a glance
 - redux-saga aims to helps with a lot of common patterns seen with async actions, and as a result looks as much like a utility library as it does a redux middleware. Many advanced use cases should be covered without needing to write your own solution.
-- Testing sagas is very clean and easy. We don't need to worry about mocking stores or functions. In the example below all we care about is that the correct instructions are returned by call() to make an api fetch, and we can pass in the expected result to the next yield. We have 100% coverage without bloating our test files with mocks.
+- Testing sagas is very clean and easy. We don't need to worry about mocking stores or functions. In the example below all we care about is that the correct instructions are returned by `call()` to make an api fetch, and we can pass in the expected result to the next yield. We have 100% coverage without bloating our test files with mocks.
 ```
 describe('fetchUsersSaga', () => {
 	it('should yield an Effect call(apiFetch)', () => {
